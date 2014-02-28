@@ -3,7 +3,7 @@ SELECT Customers.name, Customers.city
  WHERE quantity = (select max(quantity) from Products)
  LIMIT 1
  
- // I didn't understand the question.
+ // I didn't understand the question
 
 SELECT *
  FROM Products
