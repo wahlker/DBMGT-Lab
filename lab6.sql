@@ -23,4 +23,7 @@ SELECT Customers.name, Products.name, Agents.name
  INNER JOIN Agents ON (Agents.city = Customers.city)
  WHERE Products.name IS NOT NULL
 
-// 6 is wrong still working.
+SELECT Customers.name, Products.name, Agents.name
+ FROM Customers LEFT OUTER JOIN Products ON (Customers.city = Products.city)
+ INNER JOIN Agents ON (Agents.city = 'New York')
+ WHERE Products.name IS NOT NULL
