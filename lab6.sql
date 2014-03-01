@@ -28,3 +28,9 @@ SELECT Customers.name, Products.name, Agents.name
  FROM Customers LEFT OUTER JOIN Products ON (Customers.city = Products.city)
  INNER JOIN Agents ON (Agents.city = 'New York')
  WHERE Products.name IS NOT NULL
+ 
+CREATE VIEW DiscountCheck 
+ AS SELECT Customers.name, Customers.discount, Products.priceUSD, Products.quantity 
+ FROM Orders, Customers, Products;
+ 
+
