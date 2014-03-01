@@ -15,6 +15,10 @@ SELECT *
 	FROM
 	   Products);
 	   
+SELECT Customers.name, Orders.pid, Orders.dollars, COALESCE(Orders.dollars, 0)
+ FROM Customers LEFT OUTER JOIN Orders ON (Customers.cid = Orders.cid)
+ ORDER BY Orders.dollars ASC
+	   
 SELECT Customers.name, Orders.pid, Orders.dollars
  FROM Customers LEFT OUTER JOIN Orders ON (Customers.cid = Orders.cid)
  WHERE Orders.dollars IS NOT NULL
