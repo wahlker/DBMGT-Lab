@@ -3,7 +3,9 @@ SELECT Customers.name, Customers.city
  WHERE quantity = (select max(quantity) from Products)
  LIMIT 1
  
- // I didn't understand the question
+SELECT Customers.name, Customers.city
+ FROM Customers LEFT OUTER JOIN Products ON (Customers.city = Products.city)
+ WHERE quantity = (select max(quantity) from Products)
 
 SELECT *
  FROM Products
