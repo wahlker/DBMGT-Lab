@@ -1,3 +1,10 @@
+DROP TABLE people;
+DROP TABLE actors;
+DROP TABLE directors;
+DROP TABLE moves;
+DROP TABLE moviedirectors;
+DROP TABLE movieactors;
+
 CREATE TABLE people (
   pid      char(4) not null,
   name     text,
@@ -53,7 +60,7 @@ INSERT INTO people( pid, name, address)
   VALUES('p003', 'Roger Moore', '9 Beverly Hills');
   
 INSERT INTO people( pid, name, address)
-  VALUES('p004', 'Terrence Young', '10 Beverly Hills');
+  VALUES('p004', 'Terence Young', '10 Beverly Hills');
   
 INSERT INTO people( pid, name, address)
   VALUES('p005', 'Sam Mendes', '11 Beverly Hills');
@@ -69,3 +76,12 @@ INSERT INTO actors( pid, dob, haircolor, eyecolor, height, weight, sadad)
   
 INSERT INTO actors( pid, dob, haircolor, eyecolor, height, weight, sadad)
   VALUES('p003', 10141927, 'brown', 'brown', 73, 164, 10151987);
+  
+INSERT INTO directors( pid, filmschool, dgad)
+  VALUES('p004', 'James Bond School of Film', 04132011);
+  
+INSERT INTO directors( pid, filmschool, dgad)
+  VALUES('p005', 'James Bond School of Film', 10262012);
+  
+INSERT INTO directors( pid, filmschool, dgad)
+  VALUES('p006', 'James Bond School of Film', 09202011);
