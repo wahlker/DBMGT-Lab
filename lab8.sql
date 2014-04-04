@@ -85,3 +85,16 @@ INSERT INTO directors( pid, filmschool, dgad)
   
 INSERT INTO directors( pid, filmschool, dgad)
   VALUES('p006', 'James Bond School of Film', 09202011);
+
+INSERT INTO movies( mid, name, yearreleased, dbos, fbos, dvdbrsales)
+  VALUES('m01', 'Skyfall', 2012, 304360277, 804200736, 11092012);
+
+INSERT INTO movies( mid, name, yearreleased, dbos, fbos, dvdbrsales)
+  VALUES('m02', 'The Man With the Golden Gun', 1974, 20972000, 76600000, 10222002);
+
+INSERT INTO movies( mid, name, yearreleased, dbos, fbos, dvdbrsales)
+  VALUES('m03', 'From Russia With Love', 1963, 24796765, 78000000, 05162002);
+
+SELECT Actors.pid, People.name, Movies.name, Directors.pid
+ FROM Actors, People, Movies, Directors
+ WHERE People.name = 'Sean Connery';
