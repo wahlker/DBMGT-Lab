@@ -94,3 +94,7 @@ INSERT INTO movies( mid, name, yearreleased, dbos, fbos, dvdbrsales)
 
 INSERT INTO movies( mid, name, yearreleased, dbos, fbos, dvdbrsales)
   VALUES('m03', 'From Russia With Love', 1963, 24796765, 78000000, 05162002);
+
+SELECT Actors.pid, People.name, Movies.name, Directors.pid
+ FROM Actors, People, Movies, Directors
+ WHERE People.name = 'Sean Connery';
