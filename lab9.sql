@@ -48,7 +48,7 @@ CREATE TABLE FlightControlOperators (
 );
 
 CREATE TABLE SpaceCraft (
-  sid      char(4) not null references people(hid),
+  sid      char(4),
   name text,
   tailnumber    numeric(6),
   weightintons numeric,
@@ -57,6 +57,41 @@ CREATE TABLE SpaceCraft (
 );
 
 CREATE TABLE crew (
-
+  cid char(4),
+  hid      char(4) not null references people(hid),
+  sid      char(4) not null references SpaceCraft(sid),   
+  firstname      text references people(firstname),
+  lastname     text references people(lastname),
+  name      text references SpaceCraft(name),    
+primary key(cid)
 );
 
+CREATE TABLE Suppliers (
+  suid char(4),   
+  name text,
+  address text,
+  paymenterms text,   
+primary key(suid)
+);
+
+CREATE TABLE Parts (
+  pid char(4), 
+  name text,
+  description text,
+primary key(pid)
+);
+
+CREATE TABLE Systems (
+  syid char(4), 
+  name text,
+  description text,
+primary key(syid)
+);
+
+CREATE TABLE Catalog (
+  suid not null references people(suid), 
+  pid not null references parts(hid),
+  suppliername text,
+  partname text references parts(name),
+primary key(syid)
+);
