@@ -152,99 +152,98 @@ INSERT INTO Type(tid, type)
 INSERT INTO Type(tid, type)
   VALUES(3, 'Hybrid');
 
-INSERT INTO Strain(sid, tid, name)
+SELECT * FROM TYPE;
+
+INSERT INTO Strains(sid, tid, name)
   VALUES(1, 1, 'Afghan Kush');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(2, 1, 'Northern Lights');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(3, 1, 'Bubba Kush');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(4, 1, 'LA Confidential');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(5, 1, 'Skywalker');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(6, 1, 'G13');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(7, 1, 'Death Star');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(8, 1, 'Granddaddy Purple');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(9, 1, 'Strawberry Kush');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(10, 1, 'Obama Kush');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(11, 2, 'Sour Diesel');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(12, 2, 'Purple Power');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(13, 2, 'Cannalope Haze');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(14, 2, 'Candy Jack');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(15, 2, 'Ultimate Trainwreck');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(16, 2, 'Voodoo');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(17, 2, 'Very Berry Haze');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(18, 2, 'Mango Dream');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(19, 2, 'OG');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(20, 2, 'AK 47');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(21, 3, 'Barneys Tangerine Dream');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(22, 3, 'Sour Diesel');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(23, 3, 'Super Silver Haze');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(24, 3, 'Super Lemon Haze');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(25, 3, 'White Widow');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(26, 3, 'Trainwreck Kush Haze');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(27, 3, 'Blue Dream');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(28, 3, 'Atomic Northern Lights');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(29, 3, 'Skywalker OG');
 
-INSERT INTO Strain(sid, tid, name)
+INSERT INTO Strains(sid, tid, name)
   VALUES(30, 3, 'Pineapple Express');
 
-
-
-
-
-
-
+SELECT Strains.sid, Type.tid, Strains.name 
+ FROM Strains FULL OUTER JOIN Type ON (Strains.tid = Type.tid)
+ ORDER BY Strains.name ASC;
