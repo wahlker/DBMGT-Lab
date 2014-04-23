@@ -247,3 +247,6 @@ INSERT INTO Strains(sid, tid, name)
 SELECT Strains.sid, Type.tid, Strains.name 
  FROM Strains FULL OUTER JOIN Type ON (Strains.tid = Type.tid)
  ORDER BY Strains.name ASC;
+
+INSERT INTO Strain(pid, sid, gender, pottingdate, germination, seedling, vegcycle, floweringcycle, cbdpercent, thcpercent, ismatured, avgheight, description)
+  VALUES(1, 1, 'Female', '2014-04-20', 3, 28, 45, 51, 0.25, 15.13, FALSE, 60, 'The Afghan Kush plant is known for having buds that are light in color during their flowering stages, typically covered in dark red hairs, may smell a hint of spice, and is very tasty leaving the users with a hint of fruity pebbles.');
