@@ -142,3 +142,12 @@ CREATE TABLE DealersCustomers
 	FOREIGN KEY (cid) REFERENCES Customers(cid),
 	PRIMARY KEY (did, cid)
 );
+
+INSERT INTO Type(tid, type)
+  VALUES(1, 'Indica');
+
+INSERT INTO Type(tid, type)
+  VALUES(2, 'Sativa');
+
+INSERT INTO Type(tid, type)
+  VALUES(3, 'Hybrid');
