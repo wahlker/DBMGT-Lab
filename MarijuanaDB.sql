@@ -11,6 +11,8 @@ DROP TABLE IF EXISTS DispensaryPlants CASCADE;
 DROP TABLE IF EXISTS Patients CASCADE;
 DROP TABLE IF EXISTS DispensaryPatients CASCADE;
 DROP TABLE IF EXISTS Dealers CASCADE;
+DROP TABLE IF EXISTS Customers CASCADE;
+DROP TABLE IF EXISTS DealersCustomers CASCADE;
 
 CREATE TABLE Type
 (
@@ -30,11 +32,14 @@ CREATE TABLE Plants
 (
 	pid INTEGER NOT NULL PRIMARY KEY,
 	sid INTEGER NOT NULL,
+	gender VARCHAR(6),
 	pottingdate DATE,
 	germination INTEGER,
 	seedling INTEGER,
 	vegcycle INTEGER,
 	floweringcycle INTEGER,
+	cbdpercent INTEGER,
+	thcpercent INTEGER,
 	ismatured BOOLEAN,
 	avgheight INTEGER,
 	description TEXT,
@@ -66,6 +71,7 @@ CREATE TABLE People
 	eyecolor VARCHAR(10),
 	height INTEGER,
 	weight INTEGER,
+	gender VARCHAR(6),
 	address TEXT
 );
 
@@ -246,7 +252,12 @@ INSERT INTO Strains(sid, tid, name)
 
 SELECT Strains.sid, Type.tid, Strains.name 
  FROM Strains FULL OUTER JOIN Type ON (Strains.tid = Type.tid)
- ORDER BY Strains.name ASC;
+ ORDER BY Strains.sid ASC;
 
-INSERT INTO Strain(pid, sid, gender, pottingdate, germination, seedling, vegcycle, floweringcycle, cbdpercent, thcpercent, ismatured, avgheight, description)
+INSERT INTO Plants(pid, sid, gender, pottingdate, germination, seedling, vegcycle, floweringcycle, cbdpercent, thcpercent, ismatured, avgheight, description)
   VALUES(1, 1, 'Female', '2014-04-20', 3, 28, 45, 51, 0.25, 15.13, FALSE, 60, 'The Afghan Kush plant is known for having buds that are light in color during their flowering stages, typically covered in dark red hairs, may smell a hint of spice, and is very tasty leaving the users with a hint of fruity pebbles.');
+
+SELECT Plants.pid, Strains.sid, Strains.name, Type.type, gender, pottingdate, germination, seedling, vegcycle, floweringcycle, cbdpercent, thcpercent, ismatured, description 
+ FROM Plants FULL OUTER JOIN Strains ON (Plants.sid = Strains.sid)
+ INNER JOIN Type ON (Strains.tid = Type.tid)
+ ORDER BY Plants.pid ASC;
